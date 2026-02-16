@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <div>
+            <h1 class="title">Re-Login</h1>
+            <p class="subtitle">Enter username + password to retrieve your profile.</p>
+          </div>
+          <span class="badge">Secure Lookup</span>
+        </div>
+
+        {% if error %}
+          <div class="error">{{ error }}</div>
+          <div class="hr"></div>
+        {% endif %}
+
+        <form method="POST" action="/login">
+          <div class="grid">
+            <div class="field">
+              <label>Username</label>
+              <input type="text" name="username" required>
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" required>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a class="btn btn-ghost" href="/">Back to Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

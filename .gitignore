@@ -1,0 +1,5 @@
+venvAwsProject2/
+__pycache__/
+*.pyc
+users.db
+uploads/
